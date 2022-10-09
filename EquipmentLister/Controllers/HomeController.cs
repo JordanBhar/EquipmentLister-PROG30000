@@ -23,6 +23,21 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult AllEquipmentListing()
+    {
+        return View();
+    }
+
+    public IActionResult AvaliableEquipmentListing()
+    {
+        return View();
+    }
+
+    public IActionResult RequestForm()
+    {
+        return View();
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

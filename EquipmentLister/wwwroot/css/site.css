@@ -2,6 +2,12 @@ html {
   font-size: 14px;
 }
 
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Montserrat', sans-serif;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -15,4 +21,15 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+.logo{
+  width: 150px;
+  height: 180px; 
+}
+
+.purpleDiv{
+  background-image: linear-gradient(135deg, #48009b , #7F11AD ) ;
+  background-repeat: repeat-y;
+  height: auto;
 }
