@@ -38,6 +38,27 @@ public class HomeController : Controller
         return View();
     }
 
+
+    [HttpPost]
+
+    public IActionResult SaveListing(EquipmentListing listing)
+    {
+
+        if(ModelState.IsValid)
+        {
+            EquipmentListingsRepository.AddListing(listing);
+            return View("index", listing);
+        }
+
+        return View("RequestForm");
+    }
+
+
+
+
+
+
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

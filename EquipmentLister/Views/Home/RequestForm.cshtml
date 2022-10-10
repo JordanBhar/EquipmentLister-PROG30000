@@ -1,11 +1,8 @@
 @{
     ViewData["Title"] = "RequestForm Page";
 }
+@model EquipmentListing
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -16,8 +13,75 @@
         </head>
     <body>
         <h1>@ViewData["Title"]</h1>
-        
-        
+
+        <div asp-validation-summary="None"></div>
+          <form class="row g-3 mt-3" asp-action="SaveListing" method="post">
+            
+            
+            
+            <h4>Borrower Information</h4>
+            
+            <div class="input-group mb-5">
+
+              <div class="form-group col-md-4 m-1">
+                <label asp-for="Name" class="form-label">Name</label>
+                <input asp-for="Name" type="text" class="form-control" id="Name">
+                <span asp-validation-for="Name" class="text-danger"></span> 
+              </div>
+
+              <div class="form-group col-md-3 m-1">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" type="email" class="form-control" id="Email">
+                <span asp-validation-for="Email" class="text-danger"></span> 
+              </div>
+
+              <div class="form-group col-md-4 m-1">
+                <label asp-for="Phone" class="form-label">Phone Number (Fix) </label>
+                <input asp-for="Phone" type="phone" class="form-control" id="Phone">
+                <span asp-validation-for="Phone" class="text-danger"></span> 
+              </div>
+
+              <div class="form-group col-md-4 m-1">
+                <label asp-for="Role" class="form-label">Role</label>
+                <select asp-for="Role" id="Role" class="form-select">
+                  <option>Choose</option>
+                  <option value="Student">Student</option>
+                  <option value="Professor">Professor</option>
+                </select>
+                <span asp-validation-for="Role" class="text-danger"></span> 
+              </div>
+            </div>
+
+            <h4>Equipment Signout Information</h4>
+            <div class="input-group">
+              
+              <div class="form-group col-md-4 m-1">
+                <label asp-for="Type" class="form-label">Equipment Type</label>
+                <select asp-for="Type" id="Type" class="form-select">
+                  <option>Choose</option>
+                  <option value="Laptop">Laptop</option>
+                  <option value="Phone">Phone</option>
+                  <option value="Tablet">Tablet</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span asp-validation-for="Type" class="text-danger"></span> 
+              </div>
+              
+              <div class="form-group col-md-2 m-1">
+                <label asp-for="BorrowDuration" class="form-label">Borrowing Duration</label>
+                <input asp-for="BorrowDuration" type="number" class="form-control" id="BorrowDuration" placeholder="Days">
+                <span asp-validation-for="BorrowDuration" class="text-danger"></span> 
+              </div>
+
+              <div class="form-group col-md-12 m-1">
+                <label asp-for="Details" class="form-label">Details</label>
+                <textarea asp-for="Details" type="text" class="form-control" id="Details"></textarea>
+                <span asp-validation-for="Details" class="text-danger"></span> 
+              </div>
+
+              <button type="submit" class="btn btn-primary mt-5">Submit</button>
+          </form>
+        </div>
         
     <script src="" async defer></script>
     </body>

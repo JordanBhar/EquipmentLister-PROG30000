@@ -33,3 +33,7 @@ body {
   background-repeat: repeat-y;
   height: auto;
 }
+
+.input-validation-error {
+  border: 2px solid palevioletred;
+}
