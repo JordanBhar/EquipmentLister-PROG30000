@@ -68,11 +68,18 @@
               </div>
               
               <div class="form-group col-md-2 m-1">
+                <label asp-for="isAvaliable" class="form-label">Is Avaliable</label>
+                <input asp-for="isAvaliable" type="radio" value=false id="isAvaliable">False
+                <input asp-for="isAvaliable" type="radio" value=true checked= true id="isAvaliable">True
+                <span asp-validation-for="isAvaliable" class="text-danger"></span> 
+              </div>
+
+              <div class="form-group col-md-2 m-1">
                 <label asp-for="BorrowDuration" class="form-label">Borrowing Duration</label>
                 <input asp-for="BorrowDuration" type="number" class="form-control" id="BorrowDuration" placeholder="Days">
                 <span asp-validation-for="BorrowDuration" class="text-danger"></span> 
               </div>
-
+            
               <div class="form-group col-md-12 m-1">
                 <label asp-for="Details" class="form-label">Details</label>
                 <textarea asp-for="Details" type="text" class="form-control" id="Details"></textarea>

@@ -1,4 +1,43 @@
 @{
     ViewData["Title"] = "AvaliableEquipmentListing Page";
 }
+@model IEnumerable<EquipmentListing>
+<!DOCTYPE html>
+
+<body>
 <h1>@ViewData["Title"]</h1>
+
+<div class="mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Type</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Role</th>
+            <th scope="col">Details</th>
+            <th scope="col">Duration (days)</th>
+            <th scope="col">Avaliability</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var listing in Model)
+            {
+                <tr>
+                    <td>@listing.ID </td>
+                    <td>@listing.Type </td>
+                    <td>@listing.Name </td>
+                    <td>@listing.Email </td>
+                    <td>@listing.Phone </td>
+                    <td>@listing.Role </td>
+                    <td>@listing.Details </td>
+                    <td>@listing.BorrowDuration </td>
+                    <td>@listing.isAvaliable </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</body>

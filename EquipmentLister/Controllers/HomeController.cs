@@ -25,12 +25,12 @@ public class HomeController : Controller
 
     public IActionResult AllEquipmentListing()
     {
-        return View();
+        return View(EquipmentListingsRepository.GetAllListings());
     }
 
     public IActionResult AvaliableEquipmentListing()
     {
-        return View();
+        return View(EquipmentListingsRepository.GetAllAvaliableListings());
     }
 
     public IActionResult RequestForm()
@@ -52,11 +52,6 @@ public class HomeController : Controller
 
         return View("RequestForm");
     }
-
-
-
-
-
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

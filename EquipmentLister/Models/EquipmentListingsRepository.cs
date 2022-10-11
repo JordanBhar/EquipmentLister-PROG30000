@@ -14,7 +14,16 @@ namespace EquipmentLister.Models
         {
             _listings.Add(listing);
         }
+        
+        public static IEnumerable<EquipmentListing> GetAllListings()
+        {
+            return _listings;
+        }
 
+        public static IEnumerable<EquipmentListing> GetAllAvaliableListings()
+        {
+            return _listings.Where(x => x.isAvaliable == true);
+        }
 
     }
 }

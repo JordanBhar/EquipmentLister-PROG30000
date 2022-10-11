@@ -27,6 +27,9 @@ namespace EquipmentLister.Models
         [Required(ErrorMessage = "Please Provide the Borrow duration")]
         public int BorrowDuration {get; set;}
 
+        [Required(ErrorMessage = "Please provide Avalability")]
+        public bool? isAvaliable {get; set;}
+
         [Required(ErrorMessage = "Please Provide Extra Details")]
         public string? Details {get; set;}
     }
