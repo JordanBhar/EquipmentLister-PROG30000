@@ -23,12 +23,12 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult AllEquipmentListing()
+    public IActionResult AllEquipment()
     {
         return View(EquipmentListingsRepository.GetAllListings());
     }
 
-    public IActionResult AvaliableEquipmentListing()
+    public IActionResult AvaliableEquipment()
     {
         return View(EquipmentListingsRepository.GetAllAvaliableListings());
     }
